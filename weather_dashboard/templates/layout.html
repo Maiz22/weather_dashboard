@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Weather Dashboard</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <script src="{{ url_for('static', filename='dashboard.js') }}"></script>
+    </head>
+    <body>
+        <div class="sidebar">
+            <div class="sidebar-inner">
+                <header class="sidebar-header">
+                    <button class="sidebar-burger"><img class="settings-logo" src="{{ url_for('static', filename='icons/menu.png') }}"></button>
+                    <span>Setup</span>
+                </header>
+                <nav class="sidebar-menu">
+                    <button class="sidebar-location">
+                        <img src=" {{ url_for('static', filename='icons/sidebar-location.png') }}">
+                        <span>
+                            {% if locations[0] %}
+                            <input class="location-input" type="text" placeholder="Enter Location 1" value="{{locations[0]}}">
+                            {% else %}
+                            <input class="location-input" type="text" placeholder="Enter Location 1">
+                            {% endif %}
+                        </span>
+                    </button>
+                    <button class="sidebar-location">
+                        <img src=" {{ url_for('static', filename='icons/sidebar-location.png') }}">
+                        <span>
+                            {% if locations[1] %}
+                            <input class="location-input" type="text" placeholder="Enter Location 2" value="{{locations[1]}}">
+                            {% else %}
+                            <input class="location-input" type="text" placeholder="Enter Location 1">
+                            {% endif %}
+                        </span>
+                    </button>
+                    <button class="sidebar-location">
+                        <img src=" {{ url_for('static', filename='icons/sidebar-location.png') }}">
+                        <span>
+                            {% if locations[2] %}
+                            <input class="location-input" type="text" placeholder="Enter Location 3" value="{{locations[2]}}">
+                            {% else %}
+                            <input class="location-input" type="text" placeholder="Enter Location 1">
+                            {% endif %}
+                        </span>
+                    </button>
+                    <button class="sidebar-time">
+                        <img src="{{ url_for('static', filename='icons/time.png') }}">
+                        <span>
+                            <select id="select-interval">
+                                <option value="">Update Interval</option>
+                                <option value="1">1 min</option>
+                                <option value="10">10 min</option>
+                                <option value="60">60 min</option>
+                            </select>
+                        </span>
+                    </button>
+                    <button class="sidebar-save">
+                        <img src="{{ url_for('static', filename='icons/save.png') }}">
+                        <span>Save&Update</span>
+                    </button>
+                </nav>
+            </div>
+        </div>
+        <div class="main-dashboard">
+            <h1>Weather Dashboard</h1>
+            {% block body %}
+            {% endblock %}
+        </div>
+    </body>
+</html>

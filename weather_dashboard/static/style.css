@@ -1,0 +1,168 @@
+:root {
+    --primary-background: rgba(20, 20, 85, 0.5);
+    --secondary-background: rgba(0,0,100,0.25);
+    --primary-color: white;
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0px;
+    background-image: url("icons/combined_heaven.jpg");
+    color: var(--primary-color)
+}
+
+body.open .sidebar {
+    width: 260px;
+    background-color: rgba(20, 20, 85, 1);
+}
+
+body.open .main-dashboard {
+    margin: 1rem 0 0 260px;
+    transition: all 0.4s;
+}
+
+button {
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+}
+
+.sidebar {
+    position: fixed;
+    overflow: hidden;
+    background-color: var(--primary-background);
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 72px;
+    transition: width 0.4s;
+}
+
+.sidebar-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    height: 72px;
+    padding: 0 1.2rem 0 0;
+    background-color: transparent;
+}
+
+.sidebar-header span {
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-left: 25px;
+}
+
+.sidebar-burger, .sidebar-time, .sidebar-location, .sidebar-save {
+    width: 72px;
+    height: 72px;
+    display: grid;
+    place-items: center;
+    background-color: transparent;
+}
+
+.sidebar-menu {
+    display: grid;
+}
+
+.sidebar-menu button {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    height: 60px;
+    font-size: 16px;
+    font-weight: 200;
+    letter-spacing: 2px;
+    line-height: 1;
+    padding: 0 20px;
+    margin: 1rem 0 1rem 0;
+}
+
+.sidebar-menu span {
+    font-weight: 100;
+    color: white;
+}
+
+.sidebar-menu span input {   
+    height: 1.5rem;
+    width: 150px;
+    border-radius: 5px;
+    padding-left: 0.5rem;
+}
+
+.sidebar-menu span select {
+    height: 1.8rem;
+    width: 160px;
+    border-radius: 5px;
+    padding-left: 0.5rem;
+}
+
+.sidebar-location img, .sidebar-time img, .sidebar-burger img, .sidebar-save img {
+    width: 32px;
+}
+
+.main-dashboard {
+    margin: 1rem 0 0 72px;
+    transition: all 0.4s;
+}
+
+h1 {
+    margin-left: 1rem;
+    letter-spacing: -1px;
+}
+
+.weather-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+.api-content-container {
+    margin: 1rem;
+    padding: 1rem;
+    width: 380px;
+    background-color: var(--secondary-background);
+    border-radius: 1rem;
+    box-shadow: 0.2rem 0.2rem 0.2rem #000060;
+}
+
+.api-content-container:hover {
+    box-shadow: 0.25rem 0.25rem 0.25rem #000060;
+}
+
+.content-label {
+    display: inline-block;
+    margin-right: 1rem;
+    width: 40%;
+}
+
+.setup-container {
+    margin: 1rem;
+    padding: 1rem;
+    background-color: var(--secondary-background);
+    border-radius: 1rem;
+    box-shadow: 0.2rem 0.2rem 0.2rem #000060;
+}
+
+.api-content-container div {
+    margin: 1rem;
+}
+
+.weather-logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#location-logo {
+    width: 1.5rem;
+    margin-right: 1rem;
+}

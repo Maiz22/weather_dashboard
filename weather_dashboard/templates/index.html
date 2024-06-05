@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <div class="weather-container">
+        {% for n in range(3) %}
+        <div class="api-content-container">
+            <div><span><img id="location-logo" src="{{ url_for('static', filename='icons/location_icon.png') }}"></span><span id="api-location">-</span></div>
+            <hr>
+            <div><span class="content-label">Local Time:</span><span id="api-local-time">-</span></div>
+            <div class="weather-logo-container"><img id="api-weather-logo" src="//cdn.weatherapi.com/weather/64x64/day/116.png"></img></div>
+            <div><span class="content-label">Condition:</span><span id="api-condition">-</span></div>
+            <div><span class="content-label">Temperature:</span><span id="api-temperature">-</span></div>
+            <div><span class="content-label">Feels Like:</span><span id="api-feelslike">-</span></div>
+            <div><span class="content-label">Humidity:</span><span id="api-humidity">-</span></div>
+            <div><span class="content-label">UV Level:</span><span id="api-uv">-</span></div>
+            <div><span class="content-label">Pressure:</span><span id="api-pressure">-</span></div>
+            <div><span class="content-label">Wind:</span><span id="api-wind">-</span></div>
+            <div><span class="content-label">Last Update:</span><span id="api-update">-</span></div>
+            <hr>
+            <div><span class="content-label">Forecast Tomorrow</span><span id="api-update"></span></div>
+            <div class="weather-logo-container"><img id="api-weather-forecast-logo" src="//cdn.weatherapi.com/weather/64x64/day/116.png"></img></div>
+            <div><span class="content-label">Temperature:</span><span id="api-forecast-temperature">-</span></div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
